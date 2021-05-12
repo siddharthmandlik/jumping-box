@@ -1,42 +1,53 @@
-var canvas;
-var block1,block2,block3,block4;
-var ball, edges;
+var fixSprite1, fixSprite2,fixSprite3, fixSprite4; 
+var movingSprite;
 var music;
 
 function preload(){
-    // load sound here
+    music=loadSound("music.mp3");
 }
 
 
 function setup(){
     canvas = createCanvas(800,600);
 
-    block1 = createSprite(0,580,360,30);
-    block1.shapeColor = "blue";
-
-    block2 = createSprite(295,580,200,30);
-    block2.shapeColor = "orange";
-
-    //create two more blocks i.e. block3 and block4 here
-
-    ball = createSprite(random(20,750),100, 40,40);
-    ball.shapeColor = rgb(255,255,255);
-    //write code to add velocityX and velocityY
-
+   
+movingSprite=createsprite(random(10,750),300,20,20);
+    movingSprite.shapeColor="white";
+movingSprite.velocityX=3;
+    movingSprite.velocityY=3;
+    
+    fixSprite1=createSprite(100,590,180,20);
+    fixSprite1.shapeColor="green";
+    
+    fixSprite2=createSprite(300,590,180,20);
+    fixSprite2.shapeColor="blue";
+    
+    fixSprite3=createSprite(500,590,180,20);
+    fixSprite3.shapeColor="yellow";
+    
+    fixSprite4=createSprite(700,590,180,20);
+    fixSprite4.shapeColor="red";
+    
+    
+    
+    
+    
 }
 
 function draw() {
-    background(rgb(169,169,169));
-    edges=createEdgeSprites();
-    ball.bounceOff(edges);
+    background(rgb(10,10,10));
+    
 
     
     //write code to bounce off ball from the block1 
-    if(block1.isTouching(ball) && ball.bounceOff(block1)){
-        ball.shapeColor = "blue";
-        music.play();
+    if(movingSprite.x<0){
+        music.stop()
+        movingSprit.velocityX=3
     }
-
+else if(movingSprite.x>800){
+music.stop()
+    movingSprite.velocityX=-3
+}
 
 
     if(block2.isTouching(ball)){
