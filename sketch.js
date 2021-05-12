@@ -50,17 +50,33 @@ music.stop()
 }
 
 
-    if(block2.isTouching(ball)){
-        ball.shapeColor = "orange";
-        //write code to set velocityX and velocityY of ball as 0
-
-        //write code to stop music
+ if(isTouching(movingSprite,fixSprite4)){
+     music.play()
+     movingSprite.shapeColor="red";
+     bounceoff(movingSprite,fixSprite4)
+ 
+ 
+ }
+else if(isTouching(movingSprite,fixSprite3)){
+     music.stop()
+     movingSprite.shapeColor="yellow";
+     bounceoff(movingSprite,fixSprite3)}
+    
+    else if(isTouching(movingSprite,fixSprite2)){
+     music.stop()
+     movingSprite.shapeColor="blue";
+     bounceoff(movingSprite,fixSprite2)}
+    
+    else if(isTouching(movingSprite,fixSprite1)){
+     music.stop()
+     movingSprite.shapeColor="green";
+     bounceoff(movingSprite,fixSprite1)}
+    
+    if (movingSprite.y<0){
+    music.stop()
+    movingSprite.velocity=3
     }
-
-    //write code to bounce off ball from the block3
-
-
-    //write code to bounce off ball from the block4
-
+    
+    
     drawSprites();
 }
