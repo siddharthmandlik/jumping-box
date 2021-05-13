@@ -58,17 +58,17 @@ music.stop()
  
  }
 else if(isTouching(movingSprite,fixSprite3)){
-     music.stop()
+     music.play()
      movingSprite.shapeColor="yellow";
      bounceoff(movingSprite,fixSprite3)}
     
     else if(isTouching(movingSprite,fixSprite2)){
-     music.stop()
+     music.play()
      movingSprite.shapeColor="blue";
      bounceoff(movingSprite,fixSprite2)}
     
     else if(isTouching(movingSprite,fixSprite1)){
-     music.stop()
+     music.play()
      movingSprite.shapeColor="green";
      bounceoff(movingSprite,fixSprite1)}
     
